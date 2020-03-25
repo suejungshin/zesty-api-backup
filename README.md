@@ -5,6 +5,8 @@ Returns basic information about a given property and its neighbors<br>
 The complete containerized service can be found at related repo: https://github.com/suejungshin/zesty-api
 
 ## How to Run
+
+### For Local Development
 `docker-compose up -d` <br>
 When developing locally:<br>
 `python3 -m venv venv`<br>
@@ -12,7 +14,29 @@ When developing locally:<br>
 `pip3 install -r requirements.txt`<br>
 `python3 index.py`
 
+### For PRODUCTION
+`docker-compose -p project up -d` ("-p project" so container name is predictable for steps below, "-d" for detatched mode)
+
+Naviate to services:
+
+http://localhost:8080/api/display/f853874999424ad2a5b6f37af6b56610?overlayed=true
+http://localhost:8080/api/statistics/622088210a6f43fca2a1824e8610df03?distance=10
+```
+curl --location --request POST 'http://localhost:8080/api/find' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [-80, 26]
+},
+"distance_meters": 10000000
+}'
+```
+
 ## How To Test
+
+### For Local Development
 `python3 -m venv venv`<br>
 `source venv/bin/activate`<br>
 `pytest`<br>
@@ -24,6 +48,10 @@ Here are the valid propertyIDs for the 5 properties in the test database, for re
 - 3290ec7dd190478aab124f6f2f32bdd7
 - 5e25c841f0ca47ac8215b5fd0076259a
 - 622088210a6f43fca2a1824e8610df03
+
+### For Production
+`docker exec -it project_zesty_app_1 pytest`<br>
+(or grab CONTAINER ID for the zesty_app at port 8080 printed from `docker ps -a` and subsitute, e.g., `docker exec -it 9c270f7860ac pytest`)
 
 ### To Access Postgres shell from within Docker container:
 1. `docker-compose up -d` (if not already done above)
