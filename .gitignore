@@ -1,3 +1,5 @@
 venv
 images/
 !images/.gitkeep
+
+__pycache__
