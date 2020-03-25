@@ -1,4 +1,4 @@
-# Zesty.ai Backend Project
+# Zesty.ai Backend Project - Code for Containerized Service
 
 ## Summary
 Returns basic information about a given property and its neighbors<br>
