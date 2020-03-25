@@ -51,8 +51,8 @@ Endpoints are exposed at http://localhost:8080/{endpoint}
 
   Examples -
   http://localhost:8080/api/display/f853874999424ad2a5b6f37af6b56610
-  http://localhost:8080/api/display/f853874999424ad2a5b6f37af6b56610?overlay=true
-  http://localhost:8080/api/display/f853874999424ad2a5b6f37af6b56610?overlay=false
+  http://localhost:8080/api/display/f853874999424ad2a5b6f37af6b56610?overlayed=true
+  http://localhost:8080/api/display/f853874999424ad2a5b6f37af6b56610?overlayed=false
 
   Example response:<br>
   JPEG image as displayed in browser<br>
@@ -74,7 +74,7 @@ Endpoints are exposed at http://localhost:8080/{endpoint}
         "type": "Point",
         "coordinates": [-80, 26]
     },
-    "distance": 1000000
+    "distance_meters": 1000000
   }
   ```
 
