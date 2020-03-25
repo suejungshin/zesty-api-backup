@@ -1,6 +1,6 @@
 venv
 images/
-!images/.gitkeep
+!images/.keep
 
 __pycache__
 .vscode

@@ -13,6 +13,8 @@ When developing locally:<br>
 `python3 index.py`
 
 ## How To Test
+`python3 -m venv venv`<br>
+`source venv/bin/activate`<br>
 `pytest`<br>
 
 In addition, can go to links at localhost below to check it out.<br>
